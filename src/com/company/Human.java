@@ -1,15 +1,16 @@
 package com.company;
 
-public class Human {
+import com.company.device.Car;
+import com.company.device.Phone;
+
+public class Human extends Animal {
     String firstName;
     String lastName;
-    Integer age;
-    Boolean isAlive;
-    private Double salary;
 
+    private Double salary;
     Phone mobile;
     Animal pet;
-    private Car car;
+    public Car car;
 
     public Double getSalary() {
         System.out.println("Dane o wypłacie były pobrane " + java.time.LocalDateTime.now());
@@ -27,12 +28,16 @@ public class Human {
         }
     }
 
-    public Car getCar() {
+public Human() {
+        super("homo sapiens");
+}
+
+public Car getCar() {
         return this.car;
-    }
+}
 
     public void setCar(Car car) {
-        if (this.salary > car.value) {
+       if (this.salary > car.value) {
             System.out.println("kupiłeś za gotówkę auto: " + car.model);
             this.car = car;
         } else if (this.salary > car.value / 12.0) {

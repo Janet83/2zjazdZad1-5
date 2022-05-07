@@ -2,7 +2,7 @@ package com.company;
 
 public class Animal {
     final String species;
-    private Double weight = 10.0;
+    public Double weight = 10.0;
     Integer age;
     String name;
     Boolean isAlive;
